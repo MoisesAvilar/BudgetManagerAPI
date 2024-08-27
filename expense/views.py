@@ -1,3 +1,17 @@
-from django.shortcuts import render
+from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 
-# Create your views here.
+from expense.models import Expense
+from expense.serializers import ExpenseSerializer
+
+
+class ExpenseCreateListView(generics.ListCreateAPIView):
+    permission_classes = (IsAuthenticated,)
+    queryset = Expense.objects.all()
+    serializer_class = ExpenseSerializer
+
+
+class ExpenseRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = (IsAuthenticated,)
+    queryset = Expense.objects.all()
+    serializer_class = ExpenseSerializer
