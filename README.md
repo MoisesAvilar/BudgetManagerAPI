@@ -10,3 +10,7 @@
 ### Objetivo
         O objetivo ainda continua sendo auxiliar nos gastos pessoais e se organizar financeiramente.
 
+## Novidades
+### Sistema de registro de gastos e ganhos
+        No projeto anterior eu havia criado um sistema para registro de ganhos, mas não ficou como eu queria. Então vou melhorá-lo e adicionar um sistema para registro de gastos isolados.
+
