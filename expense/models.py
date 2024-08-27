@@ -1,9 +1,11 @@
+from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils import timezone
 
 
 class Expense(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_expense', default=1)
     description = models.CharField(max_length=50)
     value = models.DecimalField(max_digits=10, decimal_places=2)
     amount = models.IntegerField(default=1)

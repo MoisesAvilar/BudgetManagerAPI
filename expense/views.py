@@ -7,11 +7,18 @@ from expense.serializers import ExpenseSerializer
 
 class ExpenseCreateListView(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated,)
-    queryset = Expense.objects.all()
     serializer_class = ExpenseSerializer
+
+    def get_queryset(self):
+        return Expense.objects.filter(user=self.request.user)
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
 
 
 class ExpenseRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated,)
-    queryset = Expense.objects.all()
     serializer_class = ExpenseSerializer
+
+    def get_queryset(self):
+        return Expense.objects.filter(user=self.request.user)
