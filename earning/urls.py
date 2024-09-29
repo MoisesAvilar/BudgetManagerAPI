@@ -3,9 +3,9 @@ from earning.views import EarningCreateListView, EarningRetrieveUpdateDestroyVie
 
 
 urlpatterns = [
-    path("earnings/", EarningCreateListView.as_view(), name="earning-create-list-view"),
+    path("earning/", EarningCreateListView.as_view(), name="earning-create-list-view"),
     path(
-        "earnings/<int:pk>/",
+        "earning/<int:pk>/",
         EarningRetrieveUpdateDestroyView.as_view(),
         name="earning-detail-view",
     ),
