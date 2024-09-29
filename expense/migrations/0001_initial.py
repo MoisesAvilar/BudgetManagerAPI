@@ -19,7 +19,8 @@ class Migration(migrations.Migration):
                 ('description', models.CharField(max_length=50)),
                 ('value', models.DecimalField(decimal_places=2, max_digits=10)),
                 ('amount', models.IntegerField(default=1)),
-                ('date', models.DateTimeField(default=django.utils.timezone.now)),
+                ('created_at', models.DateTimeField(auto_now_add=True)),
+                ('updated_at', models.DateTimeField(auto_now=True)),
             ],
         ),
     ]

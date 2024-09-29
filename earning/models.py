@@ -1,13 +1,15 @@
+from django.db import models
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
-from django.db import models
+from earning.category import CATEGORY
 
 
-class Expense(models.Model):
+class Earning(models.Model):
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="user_expense", default=1
+        User, on_delete=models.CASCADE, related_name="user_earning", default=1
     )
     description = models.CharField(max_length=100)
+    category = models.CharField(max_length=100, choices=CATEGORY)
     value = models.DecimalField(max_digits=10, decimal_places=2)
     amount = models.IntegerField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)

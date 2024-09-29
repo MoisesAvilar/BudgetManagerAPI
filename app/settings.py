@@ -29,6 +29,7 @@ DJANGO_APPS = [
 
 PROJECT_APPS = [
     'authentication.apps.AuthenticationConfig',
+    'earning.apps.EarningConfig',
     'expense.apps.ExpenseConfig',
 ]
 

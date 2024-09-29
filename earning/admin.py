@@ -1,12 +1,13 @@
 from django.contrib import admin
-from expense.models import Expense
+from earning.models import Earning
 
 
-@admin.register(Expense)
-class ExpenseAdmin(admin.ModelAdmin):
+@admin.register(Earning)
+class EarningAdmin(admin.ModelAdmin):
     list_display = (
         "user",
         "description",
+        "category",
         "value",
         "amount",
         "created_at",
